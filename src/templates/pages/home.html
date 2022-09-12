@@ -1,0 +1,52 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Home Page'
+%} {% import './navbar.html' as navbar %} {% block content %}
+<div class="container mx-auto text-center">
+  <h1 class="mt-12 text-3xl md:text-4xl">Kohapp</h1>
+  <p class="mt-4 mb-12 sm:w-96 px-4 mx-auto">
+    Supporting users to digitally create, donate,
+    collect and record donations.
+  </p>
+  <a
+    role="button"
+    href="give-donation.html"
+    class="flex items-center justify-between mt-8 py-8 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600"
+  >
+    <h5 class="text-xl">Give Donation</h5>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </a>
+  <a
+    role="button"
+    href="start-collection.html"
+    class="flex items-center justify-between mt-8 py-8 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600"
+  >
+    <h5 class="text-xl">Start Collection</h5>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </a>
+  <a
+    role="button" 
+    href="create-event.html"
+    class="flex items-center justify-between mt-8 py-8 border-b border-gray-900 hover:text-gray-600 hover:border-gray-600"
+  >
+    <h5 class="text-xl">Create Event</h5>
+    <i class="fa fa-angle-right" aria-hidden="true"></i>
+  </a>
+
+</div>
+
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    $('.nav-item > h6:contains("Home")').parent().addClass('active');
+  });
+
+  let menu = document.querySelector('#menu');
+  function openMenu() {
+    menu.classList.remove('translate-x-full');
+    menu.classList.add('translate-0');
+  }
+  function closeMenu() {
+    menu.classList.remove('translate-0');
+    menu.classList.add('translate-x-full');
+  }
+</script>
+{% endblock %}

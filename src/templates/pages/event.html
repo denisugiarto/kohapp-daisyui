@@ -1,0 +1,19 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event Page'
+%} {% import './card.html' as card %} {% import './button.html' as button %} {% block content %}
+<div class="container text-center pb-28">
+  <h1 class="text-4xl my-7">Kohapp Event</h1>
+  <div class="relative form-control ">
+    <input type="search" name="search" class="input input-ghost input-bordered pl-12 focus:bg-transparent" placeholder="Search" />
+    <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 ml-6"><i class="fas fa-search"></i></div>
+  </div>
+  {{ card.event('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp') }} {{ card.collection() }} {{
+  card.event('Jenny Wilson', 'Aug 03 - Aug 10', './assets/images/picture-3.webp') }}
+    {{ button.more() }}
+</div>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    $('.navigation-item > h6:contains("Events")').parent().addClass('active');
+  });
+</script>
+{% endblock %}
